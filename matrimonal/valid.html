@@ -1,0 +1,98 @@
+<html>
+<style>
+table{
+margin-left:200px;
+}
+fieldset{
+  border-radius: 5%;
+  margin-top:200px;
+  margin-bottom:300px;
+  margin-right: 500px;
+  margin-left: 500px;
+}
+</style>
+<script>    
+        function validate() {    
+            var uname = document.reg_form.uname;    
+            var pass = document.reg_form.pass;   
+            var email= document.reg_form.email; 
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (!filter.test(email.value)) {    
+                alert("provide valid email");    
+                email.focus();       
+            }    
+            if (pass.value.length <= 7) {    
+                alert("password is too long");    
+                pass.focus();    
+            }
+            if (uname.value.length <= 0) {    
+                alert("user Name is required");    
+                uname.focus();    
+            }        
+        }    
+    </script>   
+<head>    
+    <title>Reg Form</title>    
+</head>    
+<body>    
+    <fieldset>
+    <legend style="font-size:50px">Registration Form</legend>  
+    <form name="reg_form" onsubmit="return validate()">    
+        <table style="font-size:30px">    
+            <tr>    
+                <td><label>User Name: </label></td>    
+                <td>    
+                    <input type="text" name="uname" placeholder="User Name" style="font-size:20px">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Password: </label></td>    
+                <td>    
+                    <input type="password" name="pass" placeholder="Password">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Address: </label></td>    
+                <td>    
+                    <input type="textarea" size="20" name="address" placeholder="Address" style="font-size:20px">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Gender: </label></td>    
+                <td>    
+                    <input type="radio" value="male" style="font-size:20px">Male    
+                    <input type="radio" name="gender" value="femele" style="font-size:20px">Female    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Email Id: </label></td>    
+                <td>    
+                    <input type="text" name="email" placeholder="example@gmail.com" style="font-size:20px">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Mobile: </label></td>    
+                <td>    
+                    <input type="number" style="font-size:20px">    
+                </td>    
+            </tr>    
+            <tr>    
+            <td><label>Course: </label></td>    
+                <td>    
+                    <select name="course" style="font-size:20px">    
+                        <option value="select course">select course</option>    
+                        <option value="HTML">HTML</option>    
+                        <option value="CSS">CSS</option>    
+                        <option value="JavaScript">JAVASCRIPT</option>    
+                        <option value="Java">JAVA</option>    
+                    </select>    
+                </td>    
+            </tr>              
+        </table>    
+                    <input type="submit" name="submit" value="Submit" style="font-size:20px;float:right">    
+                    <input type="reset" name="reset" value="Reset" style="font-size:20.25px">      
+    </form>    
+</fieldset>
+</body>    
+</html>
+   
